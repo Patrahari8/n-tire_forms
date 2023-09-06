@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>
+            access record table
+        </h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="n">name</label>
+            <select name="n" id="n">
+                {% for wo in qswo %}
+
+                <option value="{{wo.pk}}">{{wo.name}}</option>
+
+                {% endfor %}
+
+            </select><br><br>
+
+            <label for="a">author</label>
+            <input type="text" name="a" id="a"><br><br>
+
+            <label for="d">date</label>
+            <input type="date" name="d" id="d"><br><br>
+
+            <label for="e">email</label>
+            <input type="email" name="e" id="e"><br><br>
+
+            <input type="submit">
+        </form>
+    </center>
+</body>
+</html>

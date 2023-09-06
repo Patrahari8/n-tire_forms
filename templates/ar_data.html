@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>access record data</h1>
+
+
+        <table align="CENTER" border="2PX" cellspacing="0px" cellpadding="10">
+
+            <tr>
+                <th>pk</th>
+                <th>name</th>
+                <th>author</th>
+                <th>date</th>
+                <th>email</th>
+            </tr>
+
+
+            {% for ao in arod %}
+            <tr>
+                <td>{{ao.pk}}</td>
+                <td>{{ao.name}}</td>
+                <td>{{ao.author}}</td>
+                <td>{{ao.date}}</td>
+                <td>{{ao.email}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </center>
+</body>
+</html>
