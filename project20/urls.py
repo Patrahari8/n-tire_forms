@@ -22,4 +22,6 @@ urlpatterns = [
     path('topic_table/',topic_table,name='topic_table'),
     path('webpage_insert/',webpage_insert,name='webpage_insert'),
     path('ar_insert/',ar_insert,name='ar_insert'),
+    path('select_and_display/',select_and_display,name='select_and_display'),
+    path('checkbox/',checkbox,name='checkbox'),
 ]

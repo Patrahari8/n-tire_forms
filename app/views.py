@@ -42,3 +42,23 @@ def ar_insert(request):
         d={'arod':arod}
         return render(request,'ar_data.html',d)
     return render(request,'ar_insert.html',d1)
+
+
+def select_and_display(request):
+    qsto=topic.objects.all()
+    d={'qsto':qsto}
+    if request.method=='POST':
+        tnlist=request.POST.getlist('tn')
+        eqs=webpage.objects.none()
+        for tn in tnlist:
+            eqs=eqs|webpage.objects.filter(topic_name=tn)
+        d1={'eqs':eqs}
+        return render(request,'webpage_data.html',d1)
+    return render(request,'select_and_display.html',d)
+
+
+
+def checkbox(request):
+    qsto=topic.objects.all()
+    d={'qsto':qsto}
+    return render(request,'checkbox.html',d)
